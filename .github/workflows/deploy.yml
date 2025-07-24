@@ -29,6 +29,12 @@ jobs:
         node-version: '18'
         cache: 'npm'
         
+    - name: Clear npm cache
+      run: npm cache clean --force
+
+    - name: config npmmirror
+      run: npm config set registry https://registry.npmmirror.com
+
     - name: Install dependencies
       run: npm install
       
